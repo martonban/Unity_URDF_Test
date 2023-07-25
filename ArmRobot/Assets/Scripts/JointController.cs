@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JointController : MonoBehaviour
 {
-    [SerializeField] private float speed = 500.0f;
+    [SerializeField] private float speed = 100.0f;
     
     private ArticulationBody articulation;
 
@@ -16,11 +16,22 @@ public class JointController : MonoBehaviour
 
     void Update() 
     {
-        Rotate(30f);
+        if (Input.GetKeyDown(KeyCode.W)) 
+        {
+            float rotationChange =  speed * Time.fixedDeltaTime;
+            float rotationGoal = CurrentPrimaryAxisRotation() + rotationChange;
+            RotateToAngle(rotationGoal);
+        }
     }
 
 
-    private void Rotate(float angle) {
+    float CurrentPrimaryAxisRotation() {
+        float currentRotationRads = articulation.jointPosition[0];
+        float currentRotation = Mathf.Rad2Deg * currentRotationRads;
+        return currentRotation;
+    }
+
+    private void RotateToAngle(float angle) {
         var drive = articulation.xDrive;
         drive.target = angle;
         articulation.xDrive = drive;
