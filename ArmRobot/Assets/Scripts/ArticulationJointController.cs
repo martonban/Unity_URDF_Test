@@ -8,7 +8,7 @@ public enum RotationDirection { None = 0, Positive = 1, Negative = -1 };
 public class ArticulationJointController : MonoBehaviour
 {
     public RotationDirection rotationState = RotationDirection.None;
-    public float speed = 300.0f;
+    [SerializeField] private float speed = 200.0f;
 
     private ArticulationBody articulation;
 
@@ -22,14 +22,28 @@ public class ArticulationJointController : MonoBehaviour
 
     void FixedUpdate() 
     {
+        IncreseSpeed();
+
         if (rotationState != RotationDirection.None) {
             float rotationChange = (float)rotationState * speed * Time.fixedDeltaTime;
             float rotationGoal = CurrentPrimaryAxisRotation() + rotationChange;
             RotateTo(rotationGoal);
         }
 
-
     }
+
+
+    // Playing Functions to understand
+
+    // Increase Speed "Globally"
+    private void IncreseSpeed() 
+    {
+        if (Input.GetKey(KeyCode.G)) 
+        {
+            speed += 1f;
+        }
+    }
+
 
 
     // MOVEMENT HELPERS
