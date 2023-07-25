@@ -226,11 +226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 385129266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
+  m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 200
+  speed: 500
 --- !u!64 &385129271
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -329,11 +328,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 622386702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
+  m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 200
+  speed: 500
 --- !u!171741748 &622386704
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -565,11 +563,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 948141744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
+  m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 200
+  speed: 500
 --- !u!64 &948141749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -784,37 +781,6 @@ ArticulationBody:
   m_Immovable: 0
   m_UseGravity: 1
   m_CollisionDetectionMode: 0
---- !u!114 &995377199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995377197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 500
---- !u!114 &995377200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995377197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa6ad71f110149099d51ebf19edb294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fingerA: {fileID: 1838417712}
-  fingerB: {fileID: 1449517471}
-  grip: 0
-  gripSpeed: 3
-  gripState: 0
 --- !u!136 &995377204
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1030,11 +996,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089875216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
+  m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 200
+  speed: 0
 --- !u!64 &1089875221
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1199,11 +1164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207038283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
+  m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 200
+  speed: 500
 --- !u!64 &1207038288
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1412,24 +1376,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442213767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4559886895d244498b588caf505de6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 682594d1bea41f34da364678dbc424cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joints:
-  - inputAxis: Base
-    robotPart: {fileID: 1089875216}
-  - inputAxis: Shoulder
-    robotPart: {fileID: 385129266}
-  - inputAxis: Elbow
-    robotPart: {fileID: 948141744}
-  - inputAxis: Wrist1
-    robotPart: {fileID: 2127710631}
-  - inputAxis: Wrist2
-    robotPart: {fileID: 1207038283}
-  - inputAxis: Wrist3
-    robotPart: {fileID: 622386702}
-  - inputAxis: Hand
-    robotPart: {fileID: 995377197}
 --- !u!171741748 &1442213769
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1580,6 +1529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closedZ: 1.1
+  openPosition: {x: 0, y: 0, z: 0}
+  articulation: {fileID: 0}
 --- !u!171741748 &1449517475
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1655,7 +1606,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1557304990}
   - component: {fileID: 1557304989}
-  - component: {fileID: 1557304991}
   m_Layer: 0
   m_Name: ManualInput
   m_TagString: Untagged
@@ -1672,10 +1622,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557304988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a603dc7cc2b845edbf00fa4121d548f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1210579a22d736d469978aeb6b7f810e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 995377197}
+  robotController: {fileID: 1442213767}
 --- !u!4 &1557304990
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,19 +1640,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1557304991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557304988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bcb110d4ad9c421ca4ed32eaee6cfc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robot: {fileID: 1442213767}
 --- !u!1 &1709081025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1824,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closedZ: -1.1
+  openPosition: {x: 0, y: 0, z: 0}
+  articulation: {fileID: 0}
 --- !u!171741748 &1838417716
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -2132,11 +2071,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2127710631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadac9b07c97b442ba4339c192aefe69, type: 3}
+  m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationState: 0
-  speed: 200
+  speed: 500
 --- !u!64 &2127710636
 MeshCollider:
   m_ObjectHideFlags: 0
