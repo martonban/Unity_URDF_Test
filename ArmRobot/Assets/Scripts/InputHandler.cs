@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] GameObject robotController;
+
 }

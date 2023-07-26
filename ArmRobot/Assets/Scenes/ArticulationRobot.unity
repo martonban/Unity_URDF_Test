@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 100
 --- !u!64 &1089875221
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1379,6 +1379,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682594d1bea41f34da364678dbc424cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joints:
+  - {fileID: 1089875219}
+  - {fileID: 385129269}
+  - {fileID: 948141747}
+  - {fileID: 2127710634}
+  - {fileID: 1207038286}
+  - {fileID: 622386703}
 --- !u!171741748 &1442213769
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1528,9 +1535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b97b98ba87b42d6b91eb37a8f31c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closedZ: 1.1
-  openPosition: {x: 0, y: 0, z: 0}
-  articulation: {fileID: 0}
 --- !u!171741748 &1449517475
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1625,7 +1629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1210579a22d736d469978aeb6b7f810e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotController: {fileID: 1442213767}
 --- !u!4 &1557304990
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,9 +1826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b97b98ba87b42d6b91eb37a8f31c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closedZ: -1.1
-  openPosition: {x: 0, y: 0, z: 0}
-  articulation: {fileID: 0}
 --- !u!171741748 &1838417716
 ArticulationBody:
   m_ObjectHideFlags: 0

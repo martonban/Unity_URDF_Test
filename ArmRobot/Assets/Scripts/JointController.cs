@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum RotationDirection { None = 0, Positive = 1, Negative = -1 };
+
 public class JointController : MonoBehaviour
 {
-    [SerializeField] private float speed = 100.0f;
-    
+    [SerializeField] private float speed = 1000.0f;
+    private RotationDirection rotationState = RotationDirection.None;
+
     private ArticulationBody articulation;
 
 
@@ -16,11 +19,11 @@ public class JointController : MonoBehaviour
 
     void Update() 
     {
-        if (Input.GetKeyDown(KeyCode.W)) 
-        {
-            float rotationChange =  speed * Time.fixedDeltaTime;
+        if (rotationState != RotationDirection.None) {
+            float rotationChange = (float)rotationState * speed * Time.deltaTime;
             float rotationGoal = CurrentPrimaryAxisRotation() + rotationChange;
             RotateToAngle(rotationGoal);
+            StopRotation();
         }
     }
 
@@ -35,6 +38,14 @@ public class JointController : MonoBehaviour
         var drive = articulation.xDrive;
         drive.target = angle;
         articulation.xDrive = drive;
+    }
+
+    public void SetRotation(RotationDirection rotationState) {
+        this.rotationState = rotationState;
+    }
+
+    public void StopRotation() { 
+        this.rotationState = RotationDirection.None;
     }
 
 }
