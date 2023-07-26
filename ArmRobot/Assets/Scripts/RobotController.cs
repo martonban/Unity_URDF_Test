@@ -8,7 +8,7 @@ public class RobotController : MonoBehaviour
 
     void Update() {
 
-        if (Input.GetKeyDown(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W)) {
             for (int i = 0; i < joints.Count; i++) {
                 joints[i].SetRotation(RotationDirection.Positive);
             }
