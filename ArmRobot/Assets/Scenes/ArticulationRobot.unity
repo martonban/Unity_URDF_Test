@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 200
 --- !u!64 &385129271
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b200bd1fd7aa65047b23248cf1e7d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 200
 --- !u!64 &1089875221
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1386,6 +1386,7 @@ MonoBehaviour:
   - {fileID: 2127710634}
   - {fileID: 1207038286}
   - {fileID: 622386703}
+  InputSystem: {fileID: 1557304988}
 --- !u!171741748 &1442213769
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1629,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1210579a22d736d469978aeb6b7f810e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robotController: {fileID: 1442213768}
 --- !u!4 &1557304990
 Transform:
   m_ObjectHideFlags: 0
