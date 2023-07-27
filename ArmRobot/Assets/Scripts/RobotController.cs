@@ -16,13 +16,7 @@ public class RobotController : MonoBehaviour
     [SerializeField] private List<JointController> joints = new List<JointController>();
     [SerializeField] private GameObject InputSystem;
 
-
-    void Update() {
-        
-    }
-
     public void RotateJoint(JointNeeded needed, RotationDirection rotation) {
-
         joints[(int)needed].SetRotation(rotation);
     }
 
