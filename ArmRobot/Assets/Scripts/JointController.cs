@@ -55,7 +55,13 @@ public class JointController : MonoBehaviour
 
 
     public void JointSpeedChange(float deltaSpeed) {
-        this.speed += deltaSpeed;
+        if (deltaSpeed > 0) {
+            this.speed += deltaSpeed;
+        } else {
+            if (this.speed > 0) {
+                this.speed += deltaSpeed;
+            }
+        }
     }
 
 
