@@ -6,43 +6,29 @@ public class InputHandler : MonoBehaviour
 {
     [SerializeField] private RobotController robotController;
 
-    private void Update() {
-        if (Input.GetAxis("Base") < 0) {
-            robotController.RotateJoint(JointNeeded.Base, RotationDirection.Negative);
-        }
-        if (Input.GetAxis("Base") > 0) {
-            robotController.RotateJoint(JointNeeded.Base, RotationDirection.Positive);
-        }
-        if (Input.GetAxis("Shoulder") < 0) {
-            robotController.RotateJoint(JointNeeded.Shoulder, RotationDirection.Negative);
-        }
-        if (Input.GetAxis("Shoulder") > 0) {
-            robotController.RotateJoint(JointNeeded.Shoulder, RotationDirection.Positive);
-        }
-        if (Input.GetAxis("Elbow") < 0) {
-            robotController.RotateJoint(JointNeeded.Elbow, RotationDirection.Negative);
-        }
-        if (Input.GetAxis("Elbow") > 0) {
-            robotController.RotateJoint(JointNeeded.Elbow, RotationDirection.Positive);
-        }
-        if (Input.GetAxis("Wrist1") < 0) {
-            robotController.RotateJoint(JointNeeded.Wrist1, RotationDirection.Negative);
-        }
-        if (Input.GetAxis("Wrist1") > 0) {
-            robotController.RotateJoint(JointNeeded.Wrist1, RotationDirection.Positive);
-        }
-        if (Input.GetAxis("Wrist2") < 0) {
-            robotController.RotateJoint(JointNeeded.Wrist2, RotationDirection.Negative);
-        }
-        if (Input.GetAxis("Wrist2") > 0) {
-            robotController.RotateJoint(JointNeeded.Wrist2, RotationDirection.Positive);
-        }
-        if (Input.GetAxis("Wrist3") < 0) {
-            robotController.RotateJoint(JointNeeded.Wrist3, RotationDirection.Negative);
-        }
-        if (Input.GetAxis("Wrist3") > 0) {
-            robotController.RotateJoint(JointNeeded.Wrist3, RotationDirection.Positive);
-        }
+    private Dictionary<string, (JointNeeded joint, RotationDirection direction)> axisToJointMap;
 
+    private void Start() {
+        axisToJointMap = new Dictionary<string, (JointNeeded, RotationDirection)>
+        {
+            { "Base", (JointNeeded.Base, RotationDirection.None) },
+            { "Shoulder", (JointNeeded.Shoulder, RotationDirection.None) },
+            { "Elbow", (JointNeeded.Elbow, RotationDirection.None) },
+            { "Wrist1", (JointNeeded.Wrist1, RotationDirection.None) },
+            { "Wrist2", (JointNeeded.Wrist2, RotationDirection.None) },
+            { "Wrist3", (JointNeeded.Wrist3, RotationDirection.None) },
+        };
+    }
+
+    private void Update() {
+        foreach (var axisPair in axisToJointMap) {
+            float axisValue = Input.GetAxis(axisPair.Key);
+
+            if (axisValue < 0) {
+                robotController.RotateJoint(axisPair.Value.joint, RotationDirection.Negative);
+            } else if (axisValue > 0) {
+                robotController.RotateJoint(axisPair.Value.joint, RotationDirection.Positive);
+            }
+        }
     }
 }   
