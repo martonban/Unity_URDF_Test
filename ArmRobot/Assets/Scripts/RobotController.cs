@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public enum JointNeeded {   
@@ -20,5 +21,12 @@ public class RobotController : MonoBehaviour
         joints[(int)needed].SetRotation(rotation);
     }
 
+    public void JointSpeedChange(int needed) {
+        joints[(int)needed].JointSpeedChange(1.0f);
+    }
+
+    public void JointSpeedChange(int needed, float speed) {
+        joints[(int)needed].JointSpeedChange(speed);
+    }
 
 }

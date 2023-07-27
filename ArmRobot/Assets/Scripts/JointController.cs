@@ -7,7 +7,7 @@ public enum RotationDirection { None = 0, Positive = 1, Negative = -1 };
 public class JointController : MonoBehaviour
 {
     // Speed of a joint
-    [SerializeField] private float speed = 1000.0f;
+    [SerializeField] private float speed = 100.0f;
 
     // Enum negative/none/positive
     private RotationDirection rotationState = RotationDirection.None;
@@ -18,7 +18,7 @@ public class JointController : MonoBehaviour
 
     void Start() 
     {
-        // Get the component
+        // Get the components
         articulation = GetComponent<ArticulationBody>();
     }
 
@@ -32,7 +32,6 @@ public class JointController : MonoBehaviour
             StopRotation();
         }
     }
-
 
     float CurrentPrimaryAxisRotation() {
         float currentRotationRads = articulation.jointPosition[0];
@@ -53,6 +52,13 @@ public class JointController : MonoBehaviour
     public void StopRotation() { 
         this.rotationState = RotationDirection.None;
     }
+
+
+    public void JointSpeedChange(float deltaSpeed) {
+        this.speed += deltaSpeed;
+    }
+
+
 
 }
 
